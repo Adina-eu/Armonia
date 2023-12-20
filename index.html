@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Adina Pascu">
+    <meta name="keywords"
+        content="wellness, spa, relaxare, armonie, bunăstare, sănătate, nutriție, tratamente naturale, meditație">
+    <meta name="description"
+        content="Suntem destinația dvs. premium pentru o experiență de wellness integrală. La Armonia, credem în echilibrul perfect între trup, minte și spirit, oferindu-vă un spațiu dedicat revigorării și regăsirii armoniei interioare.">
+    <title>Armonia Wellness Center</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+    <style>
+        /* Meniu */
+        .main-navbar {
+            background-color: #6e85b3;
+        }
+
+        .main-navbar .navbar-brand {
+            font-size: 30px;
+            line-height: 50px;
+            margin-bottom: 0;
+            margin-right: 30px;
+            color: #fff;
+        }
+
+        .main-navbar .navbar-brand img {
+            height: 50px;
+            margin-right: 10px;
+            vertical-align: bottom;
+        }
+
+        .main-navbar .nav-link {
+            color: #fff;
+        }
+
+        .main-navbar .nav-link:hover {
+            text-decoration: none;
+            color: #dcdcdc;
+        }
+
+        /* Carusel */
+        #slider {
+            height: 100vh;
+        }
+
+        .carousel-item .ratio img {
+            object-fit: cover;
+
+        }
+
+        .carousel-inner {
+            height: 1-0%;
+        }
+
+        .carousel-item {
+            height: 100%;
+        }
+
+        .carousel-caption {
+            background-color: rgba(255, 255, 255, 0.8);
+            color: #333;
+            bottom: 0;
+        }
+
+        .carousel-caption .title {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        /* Despre Noi */
+
+        #despre-noi {
+            text-align: center;
+            padding: 80px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            border-radius: 8px;
+        }
+
+        #despre-noi h2 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        #despre-noi p {
+            font-size: 1.2rem;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        #despre-noi img {
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* O linie */
+        .section-divider {
+            width: 80%;
+            height: 2px;
+            background-color: #6e85b3;
+            margin-top: 40px;
+            margin-bottom: 40px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Cardurile */
+        .card {
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .card img {
+            object-fit: cover;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+        }
+
+        .card-text {
+            color: #555;
+        }
+
+        .card {
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        /* Galeria */
+        .galerie img {
+            object-fit: cover;
+        }
+
+        /* Acordeon */
+        .accordion-button {
+            background-color: #6e85b3;
+            color: #fff;
+            border: none;
+            border-radius: 0.25rem;
+            padding: 1rem;
+            margin: 0;
+            font-size: 1rem;
+            text-align: left;
+        }
+
+        .accordion-button:hover {
+            background-color: #556d8e;
+        }
+
+        .accordion-body {
+            background-color: #f8f9fa;
+            padding: 1rem;
+            border: 1px solid #ddd;
+        }
+
+        .accordion-body p,
+        .accordion-body ul {
+            margin-bottom: 1rem;
+        }
+
+        .accordion-item {
+            margin-bottom: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 0.25rem;
+        }
+
+        .accordion-item:first-child {
+            border-top-left-radius: 0.25rem;
+            border-top-right-radius: 0.25rem;
+        }
+
+        .accordion-item:last-child {
+            border-bottom-left-radius: 0.25rem;
+            border-bottom-right-radius: 0.25rem;
+        }
+
+        .accordion-item:hover {
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease-in-out;
+        }
+
+
+        /* Footer */
+        .main-footer {
+            background-color: #6e85b3;
+            color: #fff;
+            padding: 15px 0;
+            margin-top: 50px;
+        }
+
+        .main-footer .logo {
+            color: white;
+            text-decoration: none;
+        }
+
+        .main-footer .logo img {
+            height: 30px;
+            margin-right: 6px;
+            vertical-align: bottom;
+        }
+
+        .main-footer .nav img {
+            height: 30px;
+            margin-right: 10px;
+        }
+
+        .main-footer .nav a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .main-footer .nav a:hover {
+            text-decoration: none;
+            color: #dcdcdc;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Meniu -->
+
+    <header class="navbar navbar-expand-md main-navbar sticky-top">
+        <nav class="container-xxl">
+            <h1 class="navbar-brand">
+                <a class="nav-link" href="index.html">
+                    <img src="imagini/stones.png" />Armonia
+                </a>
+            </h1>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu"
+                aria-controls="mainMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="mainMenu">
+                <ul class="nav main-menu flex-column flex-md-row">
+                    <li class="nav-item"><a class="nav-link" href="#despre-noi">Despre noi</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#servicii">Servicii</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#abonamente">Abonamente</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#galerie">Cazare</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Carusel -->
+
+    <section id="carousel" class="carousel carousel-dark slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carousel" data-bs-slide-to="0" class="active" aria-current="true"
+                aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+            <button type="button" data-bs-target="#carousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+            <button type="button" data-bs-target="#carousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="10000">
+                <div class="ratio ratio-21x9">
+                    <img src="imagini/adult-aroma-aromatherapy.jpg" class="d-block w-100" alt="O maseuză care face masaj unui client de al nostru pe veranda centrului.">
+                </div>
+                <div class="carousel-caption d-none d-md-block">
+                    <h2>Aromaterapie Relaxantă</h2>
+                    <p>Experimentați puterea relaxantă a aromaterapiei pentru o relaxare ultimă.</p>
+                </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+                <div class="ratio ratio-21x9">
+                    <img src="imagini/spa-oil.jpg" class="d-block w-100" alt="O doamnă maseur își pune ulei esențial în mână.">
+                </div>
+                <div class="carousel-caption d-none d-md-block">
+                    <h2>Ulei Esențial</h2>
+                    <p>Delectați-vă cu luxul tratamentelor noastre de spa folosind uleiuri naturale de înaltă calitate.
+                    </p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="ratio ratio-21x9">
+                    <img src="imagini/am-fost-la-munte-si-mi-a-placut.jpg" class="d-block w-100" alt="O doamnă ce se relaxează într-o piscină la munte.">
+                </div>
+                <div class="carousel-caption d-none d-md-block">
+                    <h2>Retreat în Munți</h2>
+                    <p>Evadați în munți și învățați să vă bucurați de frumusețea naturii.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="ratio ratio-21x9">
+                    <img src="imagini/doamna-2.jpg" class="d-block w-100" alt="O doamnă care stă într-o cadă plină cu spumă, purtând niște ochelari de soare.">
+                </div>
+                <div class="carousel-caption d-none d-md-block">
+                    <h2>Grație și Eleganță</h2>
+                    <p>Experimentați grația și eleganța într-un mediu liniștit al centrului nostru de wellness.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="ratio ratio-21x9">
+                    <img src="imagini/feet-water.jpg" class="d-block w-100" alt="Picioarele înmuiate într-un bazin cu apă călduță și flori.">
+                </div>
+                <div class="carousel-caption d-none d-md-block">
+                    <h2>Terapie Revigorantă cu Apă</h2>
+                    <p>Revigorați-vă simțurile cu tratamentele noastre de terapie cu apă înviorătoare.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="ratio ratio-21x9">
+                    <img src="imagini/massage-woman.jpg" class="d-block w-100" alt="O doamnă care primește masaj pe o masă specială, de la cei mai buni maseuri.">
+                </div>
+                <div class="carousel-caption d-none d-md-block">
+                    <h2>Ședințe de masaj</h2>
+                    <p>Începeți o călătorie a liniștii cu ședințele noastre experte de masaj.</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </section>
+
+    <!-- Despre Noi -->
+
+    <section id="despre-noi" class="container mt-5 p-4">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <img src="imagini/despre-noi.jpg" alt="O cadă plină cu apă împreună cu un prosop și o lumânare pe marginea căzii." class="img-fluid rounded shadow-lg">
+            </div>
+            <div class="col-md-6">
+                <h2 class="mb-4">Despre Noi</h2>
+                <p class="mb-4">
+                    La Armonia Wellness Center, ne propunem să vă oferim o experiență de wellness integrală, unde
+                    fiecare detaliu este conceput pentru a vă aduce echilibru și armonie în viață. Suntem mai mult decât
+                    un simplu spa; suntem un sanctuar dedicat revitalizării trupului, minții și spiritului.
+                    Cu o echipă de terapeuți și profesioniști dedicați, vă întâmpinăm într-un mediu cald și prietenos,
+                    unde fiecare serviciu este adaptat nevoilor și dorințelor dvs. În spațiul nostru, veți descoperi
+                    tehnici tradiționale de relaxare și tratamente inovatoare pentru a vă oferi o experiență de neuitat.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- Servicii -->
+
+    <section id="servicii" class="mt-5">
+        <div class="container text-center">
+            <h2 class="mb-5">Servicii</h2>
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+                <!-- Card 1 -->
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="imagini/body-massage.png" class="card-img-top" alt="O ilustrație cu o doamnă căreia i se face masaj.">
+                        <div class="card-body">
+                            <h3 class="card-title">Masaje Relaxante</h3>
+                            <p class="card-text"> Experimentați o relaxare profundă cu masajele noastre specializate.
+                                Personalul nostru calificat vă va oferi o experiență de neuitat, folosind tehnici
+                                tradiționale și uleiuri naturale.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="imagini/foot.png" class="card-img-top" alt="O ilustrație cu un picior ce urmează să fie pus într-un bol cu apă și uleiuri esențiale.">
+                        <div class="card-body">
+                            <h3 class="card-title">Terapii Spa Profesionale</h3>
+                            <p class="card-text">Descoperiți terapiile spa de ultimă generație care vă vor revigora
+                                mintea,
+                                trupul și spiritul. De la tratamente faciale la terapii corporale, avem totul pentru
+                                starea
+                                dvs. de bine.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="imagini/therapy.png" class="card-img-top" alt="O ilustrație cu o doamnă care stă pe o masă de masaj și are pietre speciale de terapie pe spate.">
+                        <div class="card-body">
+                            <h3 class="card-title">Abonament Premium</h3>
+                            <p class="card-text">Alegeți abonamentul nostru premium și bucurați-vă de beneficii
+                                exclusive,
+                                inclusiv reduceri la servicii, acces la evenimente speciale și tratamente personalizate.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="imagini/yoga-pose.png" class="card-img-top" alt="O ilustrație cu o doamnă care face yoga.">
+                        <div class="card-body">
+                            <h3 class="card-title">Yoga și Meditație</h3>
+                            <p class="card-text">Explorează imagini cu privire la facilitățile noastre de cazare.
+                                Camerele
+                                noastre elegante și confortabile vă vor oferi o ședere relaxantă într-un mediu liniștit
+                                și
+                                natural.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+    <!-- Abonamente -->
+    <section id="abonamente" class="mt-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Abonamente</h2>
+
+            <div class="accordion" id="abonamenteAccordion">
+
+                <!-- Abonament 1 -->
+                <div class="accordion-item">
+                    <h3 class="accordion-header" id="sub1Header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#sub1Collapse" aria-expanded="true" aria-controls="sub1Collapse">
+                            Abonament Standard
+                        </button>
+                    </h3>
+                    <div id="sub1Collapse" class="accordion-collapse collapse show" aria-labelledby="sub1Header"
+                        data-bs-parent="#abonamenteAccordion">
+                        <div class="accordion-body">
+                            <p>Beneficii:</p>
+                            <ul>
+                                <li>Acces la toate facilitățile spa</li>
+                                <li>Reducere la serviciile de masaj</li>
+                                <li>Participare la evenimente exclusiviste</li>
+                                <li>Consultanță gratuită în nutriție</li>
+                            </ul>
+                            <p>Preț: 150 lei/lună</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Abonament 2 -->
+                <div class="accordion-item">
+                    <h3 class="accordion-header" id="sub2Header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#sub2Collapse" aria-expanded="false" aria-controls="sub2Collapse">
+                            Abonament Premium
+                        </button>
+                    </h3>
+                    <div id="sub2Collapse" class="accordion-collapse collapse" aria-labelledby="sub2Header"
+                        data-bs-parent="#abonamenteAccordion">
+                        <div class="accordion-body">
+                            <p>Beneficii:</p>
+                            <ul>
+                                <li>Acces nelimitat la facilitățile spa</li>
+                                <li>Ședințe gratuite de meditație</li>
+                                <li>Acces exclusiv la cursurile de fitness</li>
+                                <li>Reducere suplimentară la produsele din magazin</li>
+                            </ul>
+                            <p>Preț: 250 lei/lună</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Abonament 3 -->
+                <div class="accordion-item">
+                    <h3 class="accordion-header" id="sub3Header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#sub3Collapse" aria-expanded="false" aria-controls="sub3Collapse">
+                            Abonament VIP
+                        </button>
+                    </h3>
+                    <div id="sub3Collapse" class="accordion-collapse collapse" aria-labelledby="sub3Header"
+                        data-bs-parent="#abonamenteAccordion">
+                        <div class="accordion-body">
+                            <p>Beneficii:</p>
+                            <ul>
+                                <li>Acces prioritar la orice oră</li>
+                                <li>Tratament spa personalizat</li>
+                                <li>Consultanță de stil și înfrumusețare</li>
+                                <li>Participare gratuită la workshop-uri</li>
+                            </ul>
+                            <p>Preț: 400 lei/lună</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galerie -->
+
+    <section id="galerie" class="container mt-5">
+        <h2 class="text-center mb-4">Galerie</h2>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+            <div class="col">
+                <div class="card">
+                    <img src="imagini/bathroom3.jpg" class="card-img-top" alt="O cadă albă cu un prosop alb pe marginea sa.">
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card">
+                    <img src="imagini/bedroom1.jpg" class="card-img-top" alt="Dormitor confortabil și rafinat, cu o atmosferă relaxantă și design modern.">
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card">
+                    <img src="imagini/bedroom2.jpg" class="card-img-top" alt="Dormitor confortabil și rafinat, cu o atmosferă relaxantă și design modern.">
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card">
+                    <img src="imagini/bedroom3.jpg" class="card-img-top" alt=" Dormitor modern și luminos, cu o paletă de culori calde și confortabilă.">
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card">
+                    <img src="imagini/bedroom4.jpg" class="card-img-top" alt="Detaliu asupra elementelor de design dintr-un dormitor luxos, cu accent pe confort.">
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card">
+                    <img src="imagini/camera-lux-2.jpg" class="card-img-top" alt="Camera de lux, decorată cu gust, oferind o atmosferă relaxantă și plăcută.">
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card">
+                    <img src="imagini/pool5.jpg" class="card-img-top" alt="Piscină interioară înconjurată de plante, locul perfect pentru relaxare și răsfăț.">
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card">
+                    <img src="imagini/pool6.jpg" class="card-img-top" alt="O altă perspectivă a piscinei noastre, cu accent pe detaliile elegante.">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- Footer -->
+    <footer class="main-footer mt-5">
+        <div class="container">
+            <div class="d-flex justify-content-between pt-3">
+                <a href="index.html" class="logo">
+                    <img src="imagini/stones.png" />Armonia
+                </a>
+
+                <ul class="nav justify-content-end list-unstyled d-flex">
+                    <li class="me-3">
+                        <a href="https://web.facebook.com/armoniawellnessgr?locale=ro_RO&_rdc=1&_rdr" target="_blank">
+                            <img src="imagini/facebook.png" alt="Facebook" />
+                        </a>
+                    </li>
+                    <li class="me-3">
+                        <a href="https://twitter.com/i/flow/login?redirect_after_login=%2Farmoniawellness"
+                            target="_blank">
+                            <img src="imagini/twitter.png" alt="Twitter" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/armoniawellness" target="_blank">
+                            <img src="imagini/instagram.png" alt="Instagram" />
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="text-center">
+                <div class="text-muted pb-3">© 2023 Armonia Wellness Center</div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
+        integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
